@@ -208,6 +208,7 @@ Bundle 'python.vim--Vasiliev'
 Bundle 'git://github.com/klen/python-mode.git'
 Bundle 'ujihisa/neco-look'
 Bundle 'SudoEdit.vim'
+Bundle 'svermeulen/vim-easyclip'
 
 filetype plugin indent on " Required!
 
@@ -273,6 +274,11 @@ let g:airline_powerline_fonts=1
 " use the Powerline patched font,to show airline symbol properly
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 15
 
+
+" => vim-easyclip
+imap <c-v> <plug>EasyClipInsertModePaste
+"m is taken by 'move',so remap 'mark' to gm
+nnoremap gm m
 
 " => Python syntax enhancment
 python_highlight_all =1
