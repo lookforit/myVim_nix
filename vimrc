@@ -194,6 +194,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
@@ -209,6 +210,7 @@ Bundle 'git://github.com/klen/python-mode.git'
 Bundle 'ujihisa/neco-look'
 Bundle 'SudoEdit.vim'
 Bundle 'svermeulen/vim-easyclip'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on " Required!
 
@@ -272,6 +274,7 @@ nmap <Leader>ig :IndentGuidesToggle<CR>
 let g:airline_powerline_fonts=1
 " use the Powerline patched font,to show airline symbol properly
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 15
+let g:airline#extensions#hunks#enabled = 1
 
 
 " => vim-easyclip
