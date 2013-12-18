@@ -211,6 +211,7 @@ Bundle 'ujihisa/neco-look'
 Bundle 'SudoEdit.vim'
 Bundle 'svermeulen/vim-easyclip'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'CmdlineComplete'
 
 filetype plugin indent on " Required!
 
