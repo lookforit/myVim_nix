@@ -283,6 +283,12 @@ imap <c-v> <plug>EasyClipInsertModePaste
 "m is taken by 'move',so remap 'mark' to gm
 nnoremap gm m
 
+
+" => fugitive
+" To use fugitive more easily,'git'  abbreviate 'Git'
+cnoremap <expr> git getcmdtype() == ':' ? 'Git' : 'git'
+
+
 " => Python syntax enhancment
 python_highlight_all =1
 
