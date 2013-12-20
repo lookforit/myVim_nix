@@ -275,6 +275,7 @@ nmap <Leader>ig :IndentGuidesToggle<CR>
 let g:airline_powerline_fonts=1
 " use the Powerline patched font,to show airline symbol properly
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 15
+" Note: To display branch symbol correctly,you should have fugitive installed first
 let g:airline#extensions#hunks#enabled = 1
 
 
