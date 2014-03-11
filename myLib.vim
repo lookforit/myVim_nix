@@ -27,7 +27,7 @@ function! GenerateTaghl_config()
 
     "python's built-in library path
     if  s:current_filetype=="python"
-	let libList=split("UserLibraries:/usr/lib/python2.7/types_py.taghl")
+	let libList=split("UserLibraries:/usr/lib/python2.7/types_py.taghl,/usr/local/lib/python2.7/dist-packages/types_py.taghl")
 
     "TODO:Other surpported file types here,like C eg
     "else if s:current_filetype=="c"
