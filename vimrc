@@ -334,9 +334,10 @@ set autochdir
 "FIXME:may not need to be set 
 
 
-" => Run! (Python, Vim)
+" => Run! (Python, Vim,Lisp)
 autocmd FileType python nmap <buffer> <F5> :w<CR>:!python %<CR> 
 autocmd FileType vim nmap <buffer> <F5> :w<CR>:source %<CR> 
+autocmd FileType lisp nmap <buffer> <F5> :w<CR>:!clisp %<CR>
 
 
 
