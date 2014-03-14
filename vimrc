@@ -213,6 +213,7 @@ Bundle 'SudoEdit.vim'
 Bundle 'svermeulen/vim-easyclip'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'CmdlineComplete'
+Bundle 'slimv.vim'
 
 filetype plugin indent on " Required!
 
