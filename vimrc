@@ -51,6 +51,7 @@ set shortmess=aTI
 "编码方式设置
 set encoding=utf-8
 set fileencoding=chinese
+set fileencodings=utf-8,gb2312,gbk
 language message zh_CN.utf-8
 
 "General
