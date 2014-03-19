@@ -45,3 +45,7 @@ endfunction
 
 "Define a command for the function call
 command GenTaghlConfig call GenerateTaghl_config()
+
+"Define commands to convert C '{}' style
+command! MyCodeStyleOn %s/^\(\s*\)\([_a-zA-Z].*\)\n\s*{$/\1\2{/ge
+command! MyCodeStyleOff %s/^\(\s*\)\([_a-zA-Z].*\){$/\1\2\r\1{/ge
