@@ -215,7 +215,7 @@ Bundle 'svermeulen/vim-easyclip'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'CmdlineComplete'
 Bundle 'slimv.vim'
-
+Bundle 'scrooloose/nerdtree'
 filetype plugin indent on " Required!
 
 
@@ -239,6 +239,9 @@ let g:tagbar_expand=1
 let g:tagbar_foldlevel=2
 let g:tagbar_ironchars=['▾', '▸']
 let g:tagbar_autoshowtag=1
+
+" => NerdTree
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " => DoxygenToolkit
 let g:DoxygenToolkit_briefTag_pre=""
