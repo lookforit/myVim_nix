@@ -295,6 +295,10 @@ nnoremap gm m
 " To use fugitive more easily,'git'  abbreviate 'Git'
 cnoremap <expr> git getcmdtype() == ':' ? 'Git' : 'git'
 
+" => GitGutter
+" To jump between modified locations more easily
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
 
 " => Python syntax enhancment
 python_highlight_all =1
