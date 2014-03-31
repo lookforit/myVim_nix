@@ -24,16 +24,23 @@ function! GenerateTaghl_config()
     "highlight local variables
     let comList=split("IncludeLocals:True")
     let tagConfName="taghl_config.txt"
+    let isSurport=0
 
     "python's built-in library path
     if  s:current_filetype=="python"
 	let libList=split("UserLibraries:/usr/lib/python2.7/types_py.taghl,/usr/local/lib/python2.7/dist-packages/types_py.taghl")
+	let isSurport=1
+    endif
 
-    "TODO:Other surpported file types here,like C eg
-    "else if s:current_filetype=="c"
+    if s:current_filetype=="c"
+	let libList=split("UserLibraries:/usr/include/types_c.taghl")
+	let isSurport=1
+    endif
+
+    "TODO:Add other surpported file types here,like C++ eg
 
     "un-surported file found
-    else
+    if isSurport==0
 	echoerr("This File type isn't surpported")
 	return
     endif
