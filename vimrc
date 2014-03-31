@@ -216,6 +216,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'CmdlineComplete'
 Bundle 'slimv.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'xuhdev/SingleCompile'
 filetype plugin indent on " Required!
 
 
@@ -367,6 +368,10 @@ autocmd FileType vim nmap <buffer> <F5> :w<CR>:source %<CR>
 autocmd FileType lisp nmap <buffer> <F5> :w<CR>:!clisp %<CR>
 
 
+" => SingleCompile
+let g:SingleCompile_showquickfixiferror = 1
+let g:SingleCompile_showquickfixifwarning = 0
+autocmd FileType c nmap  <F5> :SingleCompileRun<CR>
 
 " => Neocomplete
 let g:neocomplete#enable_at_startup = 1
