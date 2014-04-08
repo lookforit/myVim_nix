@@ -272,6 +272,7 @@ let g:DoxygenToolkit_blockFooter="**********************************************
 let g:DoxygenToolkit_authorName="Xiong"
 let g:DoxygenToolkit_licenseTag="All right reserved"   
 let g:doxygen_enhanced_color=1
+cnoremap <expr> dox getcmdtype() == ':' ? 'Dox' : 'dox'
 
 " => Rainbow_Parentheses
 au VimEnter * RainbowParenthesesToggle
