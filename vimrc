@@ -309,7 +309,8 @@ let g:airline#extensions#hunks#enabled = 1
 imap <c-v> <plug>EasyClipInsertModePaste
 "m is taken by 'move',so remap 'mark' to gm
 nnoremap gm m
-
+"Move the cursor to the end of line,correspond to D,
+nmap M <Plug>MoveMotionEndOfLinePlug
 
 " => fugitive
 " To use fugitive more easily,'git'  abbreviate 'Git'
@@ -371,7 +372,8 @@ autocmd FileType lisp nmap <buffer> <F5> :w<CR>:!clisp %<CR>
 " => SingleCompile
 let g:SingleCompile_showquickfixiferror = 1
 let g:SingleCompile_showquickfixifwarning = 0
-autocmd FileType c nmap  <F5> :SingleCompileRun<CR>
+autocmd FileType c nmap  <F5> :SingleCompileRun <CR>
+call SingleCompile#ChooseCompiler('c', 'clang')
 
 " => Neocomplete
 let g:neocomplete#enable_at_startup = 1
