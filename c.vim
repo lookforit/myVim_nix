@@ -19,7 +19,8 @@ syn keyword	cLabel		case default
 syn keyword	cConditional	if else switch
 syn keyword	cRepeat		while for do
 
-syn keyword	cTodo		contained TODO FIXME XXX
+syn keyword	cTodo		contained TODO FIXME XXX 
+syn keyword	cNote		contained NOTE WARNNING
 
 " It's easy to accidentally add a space after a backslash that was intended
 " for line continuation.  Some compilers allow it, which makes it
@@ -27,7 +28,7 @@ syn keyword	cTodo		contained TODO FIXME XXX
 syn match	cBadContinuation contained "\\\s\+$"
 
 " cCommentGroup allows adding matches for special things in comments
-syn cluster	cCommentGroup	contains=cTodo,cBadContinuation
+syn cluster	cCommentGroup	contains=cTodo,cBadContinuation,cNote
 
 " String and Character constants
 " Highlight special characters (those which have a backslash) differently
@@ -456,6 +457,7 @@ hi def link cString		String
 hi def link cComment		Comment
 hi def link cSpecial		SpecialChar
 hi def link cTodo		Todo
+hi def link cNote		Todo
 hi def link cBadContinuation	Error
 hi def link cCppOutSkip		cCppOutIf2
 hi def link cCppInElse2		cCppOutIf2
