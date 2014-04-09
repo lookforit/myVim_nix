@@ -1150,12 +1150,32 @@ function! s:WarnMsg( msg )
   return
 endfunction
 
+"""""""""""""""""""""""""""""""""""
+" Generate title comment 
+"""""""""""""""""""""""""""""""""""
+function! <SID>DoxyTitle()
+
+    if(s:CheckFileType() == "python")
+	exec "normal A"."#*****************************************************************************"
+    else "For C 
+	exec "normal A"."/****************************************************************************/"
+	exec "normal O"."/****************************************************************************/"
+	exec "normal o"."/*       */"
+	exec "normal =}"
+	exec "normal 0"
+	exec "normal f*"
+	startinsert
+	exec "normal l"
+	startinsert
+    endif
+endfunction
 """"""""""""""""""""""""""
 " Shortcuts...
 """"""""""""""""""""""""""
 command! -nargs=0 Dox :call <SID>DoxygenCommentFunc()
 command! -nargs=0 DoxLic :call <SID>DoxygenLicenseFunc()
 command! -nargs=0 DoxAuthor :call <SID>DoxygenAuthorFunc()
+command! -nargs=0 DoxyTitle :call <SID>DoxyTitle()
 command! -nargs=1 DoxUndoc :call <SID>DoxygenUndocumentFunc(<q-args>)
 command! -nargs=0 DoxBlock :call <SID>DoxygenBlockFunc()
 
