@@ -304,7 +304,8 @@ let g:airline_powerline_fonts=1
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 15
 " Note: To display branch symbol correctly,you should have fugitive installed first
 let g:airline#extensions#hunks#enabled = 1
-
+" Display the line count in Airline
+let g:airline_section_warning = airline#section#create_right(['%L'])
 
 " => vim-easyclip
 imap <c-v> <plug>EasyClipInsertModePaste
