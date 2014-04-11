@@ -308,7 +308,6 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline_section_warning = airline#section#create_right(['%L'])
 
 " => vim-easyclip
-imap <c-v> <plug>EasyClipInsertModePaste
 "m is taken by 'move',so remap 'mark' to gm
 nnoremap gm m
 "Move the cursor to the end of line,correspond to D,
