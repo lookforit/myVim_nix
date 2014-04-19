@@ -60,7 +60,7 @@ let mapleader=',' 		" Change the mapleader
 set hidden 			" Turn on hidden"
 set nowritebackup
 set nobackup
-set ignorecase smartcase
+set ignorecase 
 set incsearch 		  	" Enable Increasing Search
 set report=0
 set noswapfile
@@ -217,6 +217,7 @@ Bundle 'CmdlineComplete'
 Bundle 'slimv.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'xuhdev/SingleCompile'
+Bundle 'FromtonRouge/OmniCppComplete'
 filetype plugin indent on " Required!
 
 
@@ -381,8 +382,6 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_delimiter=1
 let g:neocomplete#auto_completion_start_length=1
-" let g:neocomplete#enable_fuzzy_completion = 0
-let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
