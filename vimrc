@@ -57,10 +57,13 @@ nnoremap <silent> <S-p> "0p<CR>k
 "当前编辑文件的路径为当前路径 
 map <F2> :lcd %:h<CR>
 
+" Reload .vimrc
+map <Leader>r :so ~/.vimrc<CR>
+
 "退格键设定上一层目录为当前路径
 noremap <BS> :cd..<CR>:pwd<CR>
 
-"复制到剪切板(仅适用于GVIM)
+"复制到剪切板(仅适用于GVIM,VIMX)
 vmap <F3> "+y
 
 "通过"%%"快捷输入当前buffer目录
@@ -69,3 +72,51 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 "为自动完成选择条目习惯
 inoremap <expr> <c-k> pumvisible()?"\<Up>":"\<c-k>"
 inoremap <expr> <c-j> pumvisible()?"\<Down>":"\<c-j>"
+
+"--------------------------------------------------
+" => Plugins in Vundle
+"--------------------------------------------------
+filetype off 				" Required!
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'szw/vim-smartclose'
+
+
+call vundle#end()            		" Required
+filetype plugin indent on    		" Required
+
+"--------------------------------------------------
+" => Plugins Setting
+"--------------------------------------------------
+
+"=> SmartClose插件，快捷关闭buffer
+let g:smartclose_set_default_mapping = 0
+nnoremap <silent><Leader>q :SmartClose<CR>
+
+" => Tagbar
+nnoremap <Leader>t :TagbarToggle<CR>
+let g:tagbar_autofocus=1
+let g:tagbar_expand=1
+let g:tagbar_foldlevel=2
+let g:tagbar_ironchars=['▾', '▸']
+let g:tagbar_autoshowtag=1
+
+
+
+
+" => YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_seed_identifiers_with_syntax=1	
+let g:ycm_key_list_select_completion=['<c-n>']
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion=['<c-p>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+inoremap <expr> <space>     pumvisible() ? "\<C-y>" : "\<space>"
