@@ -89,6 +89,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'luochen1990/rainbow'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 
 call vundle#end()            		" Required
@@ -129,6 +131,13 @@ let g:togglecursor_leave='blinking_line'
 map <Leader>jd :TernDef<CR>
 map <Leader>jq :TernDoc<CR>
 map <Leader>jQ :TernDocBrowse<CR>
+
+" => Javascript syntax highlighting
+let g:javascript_enable_domhtmlcss=1
+
+" => Javascript  javascript-libray-syntax
+" Add other libraies...
+let g:used_javascript_libs = 'jquery,underscore,backbone,handlebars'
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
