@@ -47,7 +47,7 @@ imap <M-Up> <ESC><c-w>k
 imap <M-Down> <ESC><c-w>j
 
 "normal模式下换行
-map <c-CR>  :put=''<CR>
+map <CR>  :put=''<CR>
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
@@ -94,6 +94,8 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'moll/vim-node'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 
 call vundle#end()            		" Required
@@ -147,9 +149,15 @@ let g:used_javascript_libs = 'jquery,underscore,backbone,handlebars'
 map <Leader>ff :call JsBeautify()<cr>
 autocmd FileType javascript vnoremap <buffer>  <Leader>ff :call RangeJsBeautify()<cr>
 
+
 " => EasyAlign(Tabular likewise)
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" => UltiSnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
