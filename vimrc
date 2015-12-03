@@ -2,6 +2,7 @@
 colorscheme desertEx
 set guifont=文泉驿等宽微米黑\ 15
 set shortmess=aTI
+set t_Co=256
 
 ""编码方式设置
 set encoding=utf-8
@@ -85,6 +86,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'szw/vim-smartclose'
 Plugin 'Raimondi/delimitMate'
+Plugin 'luochen1990/rainbow'
 
 
 call vundle#end()            		" Required
@@ -109,6 +111,13 @@ let g:tagbar_autoshowtag=1
 " => Delimiter
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
 
+
+" => Rainbow pairs
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    \   'ctermfgs': ['blue', 'red','darkmagenta','cyan', 'lightyellow','brown'],
+    \   'operators': '_,_',}
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
