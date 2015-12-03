@@ -92,6 +92,8 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'moll/vim-node'
+Plugin 'junegunn/vim-easy-align'
 
 
 call vundle#end()            		" Required
@@ -144,6 +146,10 @@ let g:used_javascript_libs = 'jquery,underscore,backbone,handlebars'
 " => JsBeautify
 map <Leader>ff :call JsBeautify()<cr>
 autocmd FileType javascript vnoremap <buffer>  <Leader>ff :call RangeJsBeautify()<cr>
+
+" => EasyAlign(Tabular likewise)
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
