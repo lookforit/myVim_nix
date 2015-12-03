@@ -87,6 +87,8 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'szw/vim-smartclose'
 Plugin 'Raimondi/delimitMate'
 Plugin 'luochen1990/rainbow'
+Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'ternjs/tern_for_vim'
 
 
 call vundle#end()            		" Required
@@ -118,6 +120,15 @@ let g:rainbow_conf = {
     \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
     \   'ctermfgs': ['blue', 'red','darkmagenta','cyan', 'lightyellow','brown'],
     \   'operators': '_,_',}
+
+
+" => vim-togglecursor: Changing cursor shape in different modes(Perfect solution).
+let g:togglecursor_leave='blinking_line'
+
+" => Tern_for_vim
+map <Leader>jd :TernDef<CR>
+map <Leader>jq :TernDoc<CR>
+map <Leader>jQ :TernDocBrowse<CR>
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
