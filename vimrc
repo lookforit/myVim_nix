@@ -96,6 +96,7 @@ Plugin 'moll/vim-node'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'sunnogo/vim-taghighlight'
 
 
 call vundle#end()            		" Required
