@@ -84,6 +84,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'szw/vim-smartclose'
+Plugin 'Raimondi/delimitMate'
 
 
 call vundle#end()            		" Required
@@ -105,7 +106,8 @@ let g:tagbar_foldlevel=2
 let g:tagbar_ironchars=['▾', '▸']
 let g:tagbar_autoshowtag=1
 
-
+" => Delimiter
+let delimitMate_matchpairs = "(:),[:],{:},<:>"
 
 
 " => YouCompleteMe
