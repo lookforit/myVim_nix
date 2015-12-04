@@ -97,6 +97,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'sunnogo/vim-taghighlight'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 
 call vundle#end()            		" Required
@@ -159,6 +160,20 @@ nmap ga <Plug>(EasyAlign)
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+" => Ctrlp
+map <Leader>m :CtrlPMixed<cr>
+map <Leader>b :CtrlPBuffer<cr>
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command =  'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
+
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
