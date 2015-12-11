@@ -53,23 +53,22 @@ highlight colorcolumn guibg=gray30 ctermbg=240
 highlight Comment guifg=palegreen3 gui=NONE ctermfg=114 cterm=NONE
 highlight Constant guifg=salmon gui=NONE ctermfg=210 cterm=NONE
 highlight Identifier guifg=skyblue gui=NONE ctermfg=117 cterm=NONE
-highlight Function guifg=skyblue gui=NONE ctermfg=117 cterm=NONE
+highlight Function guifg=skyblue gui=NONE ctermfg=red cterm=NONE
 highlight Statement guifg=lightgoldenrod2 gui=bold ctermfg=186 cterm=bold
 highlight PreProc guifg=palevioletred2 gui=NONE ctermfg=211 cterm=NONE
-highlight Type guifg=tan1 gui=bold ctermfg=215 cterm=bold
+highlight Type guifg=tan1 gui=bold ctermfg=green cterm=bold
 highlight Special guifg=aquamarine2 gui=NONE ctermfg=122 cterm=NONE
 highlight Ignore guifg=grey40 gui=NONE ctermfg=241 cterm=NONE
 highlight Todo guifg=orangered guibg=yellow2 gui=NONE ctermfg=202 ctermbg=226 cterm=NONE
 
 
-hi LocalVariable guifg=white gui=bold
-hi CTagsMember guifg=#D063D0 gui=bold
-hi Structure guifg=#0099CC gui=bold
-hi GlobalVariable guifg=#B0E2FF gui=bold
+hi LocalVariable guifg=white gui=bold ctermfg=white cterm=bold
+hi CTagsMember guifg=#D063D0 gui=bold ctermfg=113 cterm=bold
+hi Structure guifg=#0099CC gui=bold ctermfg=blue cterm=bold
+hi GlobalVariable guifg=#B0E2FF gui=bold  ctermfg=cyan cterm=bold
 
 " TODO:Change the defined's color
-hi DefinedName     guifg=Magenta gui=bold
-
+hi DefinedName     guifg=Magenta gui=bold ctermfg=magenta cterm=bold
 
 
 
