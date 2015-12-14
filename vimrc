@@ -98,6 +98,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'sunnogo/vim-taghighlight'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 
 
 call vundle#end()            		" Required
@@ -175,6 +176,9 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command =  'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
 
+" => fugitive
+" To use fugitive more easily,'git'  abbreviate 'Git'
+cnoremap <expr> git getcmdtype() == ':' ? 'Git' : 'git'
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
