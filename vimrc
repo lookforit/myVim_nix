@@ -135,9 +135,10 @@ let g:rainbow_conf = {
 let g:togglecursor_leave='blinking_line'
 
 " => Tern_for_vim
-map <Leader>jd :TernDef<CR>
-map <Leader>jq :TernDoc<CR>
-map <Leader>jQ :TernDocBrowse<CR>
+autocmd FileType javascript map <c-]> :TernDef<CR>
+autocmd FileType javascript map <Leader>u :TernRefs<CR>
+autocmd FileType javascript map <Leader>jq :TernDoc<CR>
+autocmd FileType javascript map <Leader>jQ :TernDocBrowse<CR>
 
 " => Javascript syntax highlighting
 let g:javascript_enable_domhtmlcss=1
