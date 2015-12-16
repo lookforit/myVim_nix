@@ -46,8 +46,6 @@ imap <M-Left> <ESC><c-w>h
 imap <M-Up> <ESC><c-w>k
 imap <M-Down> <ESC><c-w>j
 
-"normal模式下换行
-map <Leader><CR>  :put=''<CR>
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
@@ -99,6 +97,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'sunnogo/vim-taghighlight'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
 
 
 call vundle#end()            		" Required
