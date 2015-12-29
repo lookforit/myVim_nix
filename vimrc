@@ -50,6 +50,7 @@ imap <M-Down> <ESC><c-w>j
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
+
 " <Shift-p> paste the yank word, not the deleted
 nnoremap <silent> <S-p> "0p<CR>k
 
@@ -151,7 +152,8 @@ let g:used_javascript_libs = 'jquery,underscore,backbone,handlebars'
 
 " => JsBeautify
 map <Leader>ff :call JsBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer>  <Leader>ff :call RangeJsBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer> <Leader>ff :call RangeJsBeautify()<cr>
+autocmd FileType javascript nnoremap <silent> <Leader>FF VG :call RangeJsBeautify()<cr>
 
 
 " => EasyAlign(Tabular likewise)
