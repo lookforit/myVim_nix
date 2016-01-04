@@ -144,6 +144,7 @@ autocmd FileType javascript map <Leader>jQ :TernDocBrowse<CR>
 
 " => Javascript syntax highlighting
 let g:javascript_enable_domhtmlcss=1
+autocmd FileType javascript syntax keyword jsFuncName watch log
 
 " => Javascript  javascript-libray-syntax
 " Add other libraies...
