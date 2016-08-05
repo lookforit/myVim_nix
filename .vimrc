@@ -1,5 +1,4 @@
 "Font and Color
-colorscheme desertEx
 set guifont=文泉驿等宽微米黑\ 15
 set shortmess=aTI
 set t_Co=256
@@ -19,6 +18,7 @@ set incsearch                   " Enable Increasing Search
 set report=0
 set shiftwidth=4
 set wildignorecase              " Ignore case in command mode
+set fenc=
 
 ""File format compatibility
 set viewoptions+=slash,unix     " Better Unix/Windows compatibility
@@ -76,6 +76,7 @@ inoremap <expr> <c-j> pumvisible()?"\<Down>":"\<c-j>"
 "--------------------------------------------------
 " => Plugins in Vundle
 "--------------------------------------------------
+set nocompatible
 filetype off 				" Required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -88,7 +89,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'luochen1990/rainbow'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'ternjs/tern_for_vim'
-Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'moll/vim-node'
@@ -100,6 +100,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'digitaltoad/vim-pug'
 
 
 call vundle#end()            		" Required
@@ -195,3 +198,8 @@ let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion=['<c-p>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 inoremap <expr> <space>     pumvisible() ? "\<C-y>" : "\<space>"
+
+
+" => Solarized colorscheme
+let g:solarized_termcolors=256
+colorscheme solarized
