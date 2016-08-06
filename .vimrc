@@ -103,6 +103,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'gabesoft/vim-ags'
 
 
 call vundle#end()            		" Required
@@ -133,6 +134,7 @@ let g:rainbow_active = 1
 let g:rainbow_conf = {
     \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
     \   'ctermfgs': ['blue', 'red','darkmagenta','cyan', 'lightyellow','brown'],
+    \   'separately' : { 'agsv' : 0 },
     \   'operators': '_,_',}
 
 
@@ -198,6 +200,11 @@ let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion=['<c-p>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 inoremap <expr> <space>     pumvisible() ? "\<C-y>" : "\<space>"
+
+
+" => vim-ags(substitute of ack.vim)
+nnoremap <Leader>s :Ags<Space>
+let g:ags_agcontext = 0
 
 
 " => Solarized colorscheme
