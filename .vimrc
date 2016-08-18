@@ -104,6 +104,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'gabesoft/vim-ags'
+Plugin 'brookhong/cscope.vim'
 
 
 call vundle#end()            		" Required
@@ -203,9 +204,29 @@ inoremap <expr> <space>     pumvisible() ? "\<C-y>" : "\<space>"
 
 
 " => vim-ags(substitute of ack.vim)
-nnoremap <Leader>s :Ags<Space>
+nnoremap <Leader>s :Ags <C-R>=expand("<cword>")<CR><CR>
 let g:ags_agcontext = 0
 
+" => Cscove(substitute of cscope)
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
+
+" s: Find this C symbol
+nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
