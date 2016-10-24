@@ -105,6 +105,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'digitaltoad/vim-pug'
 Plugin 'gabesoft/vim-ags'
 Plugin 'brookhong/cscope.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 
 call vundle#end()            		" Required
@@ -176,6 +177,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " => Ctrlp
 map <Leader>m :CtrlPMixed<cr>
 map <Leader>b :CtrlPBuffer<cr>
+map <leader>n :CtrlPCurFile<cr>
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 let g:ctrlp_custom_ignore = {
@@ -208,26 +210,41 @@ nnoremap <Leader>s :Ags <C-R>=expand("<cword>")<CR><CR>
 let g:ags_agcontext = 0
 
 " => Cscove(substitute of cscope)
-nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+
+let g:cscope_silent = 1
+nnoremap <leader>ga :call CscopeFindInteractive(expand('<cword>'))<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
 
 " s: Find this C symbol
-nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+nnoremap  <leader>gs :call CscopeFind('s', expand('<cword>'))<CR>
 " g: Find this definition
-nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+nnoremap  <leader>gg :call CscopeFind('g', expand('<cword>'))<CR>
 " d: Find functions called by this function
-nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+nnoremap  <leader>gd :call CscopeFind('d', expand('<cword>'))<CR>
 " c: Find functions calling this function
-nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+nnoremap  <leader>gc :call CscopeFind('c', expand('<cword>'))<CR>
 " t: Find this text string
-nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+nnoremap  <leader>gt :call CscopeFind('t', expand('<cword>'))<CR>
 " e: Find this egrep pattern
-nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+nnoremap  <leader>ge :call CscopeFind('e', expand('<cword>'))<CR>
 " f: Find this file
-nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+nnoremap  <leader>gf :call CscopeFind('f', expand('<cword>'))<CR>
 " i: Find files #including this file
-nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+nnoremap  <leader>gi :call CscopeFind('i', expand('<cword>'))<CR>
+
+" => CPP enhanced syntax highlighting
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
 colorscheme solarized
+hi LocalVariable ctermfg=8 	cterm=bold
+hi DefinedName   ctermfg=135 	cterm=bold 
+
+" => Let tmux status line show up the file name of current edited by vim
+autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window bash")
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")                                                                 
+set title
