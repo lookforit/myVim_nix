@@ -106,6 +106,7 @@ Plugin 'digitaltoad/vim-pug'
 Plugin 'gabesoft/vim-ags'
 Plugin 'brookhong/cscope.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'mhinz/vim-signify'
 
 
 call vundle#end()            		" Required
@@ -236,6 +237,10 @@ nnoremap  <leader>gi :call CscopeFind('i', expand('<cword>'))<CR>
 let g:cpp_class_scope_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
+" => Signify
+let g:signify_update_on_bufenter = 1
+let g:signify_update_on_focusgained = 1
+noremap <leader>gr :SignifyRefresh<CR>
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
