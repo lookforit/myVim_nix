@@ -179,7 +179,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 map <Leader>m :CtrlPMixed<cr>
 map <Leader>b :CtrlPBuffer<cr>
 map <leader>n :CtrlPCurFile<cr>
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20,results:20'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -247,6 +247,7 @@ let g:solarized_termcolors=256
 colorscheme solarized
 hi LocalVariable ctermfg=8 	cterm=bold
 hi DefinedName   ctermfg=135 	cterm=bold 
+
 
 " => Let tmux status line show up the file name of current edited by vim
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
