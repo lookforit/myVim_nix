@@ -107,6 +107,7 @@ Plugin 'gabesoft/vim-ags'
 Plugin 'brookhong/cscope.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'mhinz/vim-signify'
+Plugin 'j5shi/CommandlineComplete.vim'
 
 
 call vundle#end()            		" Required
@@ -241,6 +242,10 @@ let g:cpp_experimental_template_highlight = 1
 let g:signify_update_on_bufenter = 1
 let g:signify_update_on_focusgained = 1
 noremap <leader>gr :SignifyRefresh<CR>
+
+" => CommandlineComplete
+cmap <c-p> <Plug>CmdlineCompleteBackward
+cmap <c-n> <Plug>CmdlineCompleteForward
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
