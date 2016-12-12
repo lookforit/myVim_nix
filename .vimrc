@@ -112,6 +112,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'burnettk/vim-angular'
 Plugin 'mattn/emmet-vim'
+Plugin 'Yggdroot/indentLine'
 
 
 call vundle#end()            		" Required
@@ -258,6 +259,10 @@ cmap <c-n> <Plug>CmdlineCompleteForward
 map <leader>f :NERDTreeToggle<CR>
 let NERDTreeWinPos='right'
 
+" => IndentLine
+let g:indentLine_enabled = 0
+let g:indentLine_color_term = 239
+let g:indentLine_char = '┊'
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
