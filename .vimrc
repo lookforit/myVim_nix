@@ -108,6 +108,10 @@ Plugin 'brookhong/cscope.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'mhinz/vim-signify'
 Plugin 'j5shi/CommandlineComplete.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'burnettk/vim-angular'
+Plugin 'mattn/emmet-vim'
 
 
 call vundle#end()            		" Required
@@ -131,6 +135,7 @@ let g:tagbar_autoshowtag=1
 
 " => Delimiter
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
+au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
 " => Rainbow pairs
@@ -192,6 +197,8 @@ let g:ctrlp_user_command =  'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
 " => fugitive
 " To use fugitive more easily,'git'  abbreviate 'Git'
 cnoremap <expr> git getcmdtype() == ':' ? 'Git' : 'git'
+autocmd QuickFixCmdPost *log* cwindow
+autocmd QuickFixCmdPost *grep* cwindow
 
 " => YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -246,6 +253,11 @@ noremap <leader>gr :SignifyRefresh<CR>
 " => CommandlineComplete
 cmap <c-p> <Plug>CmdlineCompleteBackward
 cmap <c-n> <Plug>CmdlineCompleteForward
+
+" => NerdTree
+map <leader>f :NERDTreeToggle<CR>
+let NERDTreeWinPos='right'
+
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
