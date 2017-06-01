@@ -73,6 +73,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 inoremap <expr> <c-k> pumvisible()?"\<Up>":"\<c-k>"
 inoremap <expr> <c-j> pumvisible()?"\<Down>":"\<c-j>"
 
+"处理 art 模板文件
+au BufEnter *.art setlocal filetype=html
+
 "--------------------------------------------------
 " => Plugins in Vundle
 "--------------------------------------------------
@@ -87,7 +90,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'szw/vim-smartclose'
 Plugin 'Raimondi/delimitMate'
 Plugin 'luochen1990/rainbow'
-Plugin 'jszakmeister/vim-togglecursor'
+" Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'maksimr/vim-jsbeautify'
@@ -113,6 +116,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'burnettk/vim-angular'
 Plugin 'mattn/emmet-vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'instant-markdown.vim'
+Plugin 'Valloric/MatchTagAlways'
 
 
 call vundle#end()            		" Required
@@ -137,6 +142,7 @@ let g:tagbar_autoshowtag=1
 " => Delimiter
 let delimitMate_matchpairs = "(:),[:],{:},<:>"
 au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"
+au FileType cpp let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 
 " => Rainbow pairs
@@ -153,6 +159,7 @@ let g:togglecursor_leave='blinking_line'
 
 " => Tern_for_vim
 autocmd FileType javascript map <c-]> :TernDef<CR>
+
 autocmd FileType javascript map <Leader>u :TernRefs<CR>
 autocmd FileType javascript map <Leader>jq :TernDoc<CR>
 autocmd FileType javascript map <Leader>jQ :TernDocBrowse<CR>
@@ -187,13 +194,14 @@ map <Leader>m :CtrlPMixed<cr>
 map <Leader>b :CtrlPBuffer<cr>
 map <leader>n :CtrlPCurFile<cr>
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:20,results:20'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-let g:ctrlp_user_command =  'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
+" let g:ctrlp_user_command =  'find %s -type f | grep -v -P "\.jpg$|/tmp/"'
+let g:ctrlp_show_hidden = 0
 
 " => fugitive
 " To use fugitive more easily,'git'  abbreviate 'Git'
@@ -255,6 +263,9 @@ noremap <leader>gr :SignifyRefresh<CR>
 cmap <c-p> <Plug>CmdlineCompleteBackward
 cmap <c-n> <Plug>CmdlineCompleteForward
 
+" => Instant Markdown
+let g:instant_markdown_autostart = 0
+
 " => NerdTree
 map <leader>f :NERDTreeToggle<CR>
 let NERDTreeWinPos='right'
@@ -263,6 +274,10 @@ let NERDTreeWinPos='right'
 let g:indentLine_enabled = 0
 let g:indentLine_color_term = 239
 let g:indentLine_char = '┊'
+let g:indentLine_conceallevel = 1
+
+" => MatchTagAlways
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
