@@ -90,7 +90,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'szw/vim-smartclose'
 Plugin 'Raimondi/delimitMate'
 Plugin 'luochen1990/rainbow'
-" Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'maksimr/vim-jsbeautify'
@@ -224,7 +224,7 @@ inoremap <expr> <space>     pumvisible() ? "\<C-y>" : "\<space>"
 
 
 " => vim-ags(substitute of ack.vim)
-nnoremap <Leader>s :Ags <C-R>=expand("<cword>")<CR><CR>
+noremap <Leader>s :Ags <C-R>=expand("<cword>")<CR><CR>
 let g:ags_agcontext = 0
 
 " => Cscove(substitute of cscope)
@@ -281,6 +281,7 @@ nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 " => Solarized colorscheme
 let g:solarized_termcolors=256
+let g:solarized_termtrans=1
 colorscheme solarized
 hi LocalVariable ctermfg=8 	cterm=bold
 hi DefinedName   ctermfg=135 	cterm=bold 
